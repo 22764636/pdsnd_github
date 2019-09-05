@@ -13,4 +13,4 @@ new_york_city.csv
 washington.csv
 
 ### Credits
-N/A
+No ispiration or consultation for now :no_mouth:
