@@ -5,6 +5,7 @@ import numpy as np
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
+months_available = ['january', 'february', 'march', 'april', 'may', 'june']
 
 def get_filters():
     """
@@ -56,7 +57,6 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months_available = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months_available.index(month) + 1
 
         # filter by month to create the new dataframe
@@ -75,7 +75,6 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    months_available = ['january', 'february', 'march', 'april', 'may', 'june']
     # TO DO: display the most common month
     print('The month with the most trips is: {}\n'.format(months_available[df['month'].mode()[0] - 1]).title())
    
