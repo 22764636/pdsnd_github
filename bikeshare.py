@@ -56,8 +56,8 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        months = ['january', 'february', 'march', 'april', 'may', 'june']
-        month = months.index(month) + 1
+        months_available = ['january', 'february', 'march', 'april', 'may', 'june']
+        month = months_available.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
@@ -75,9 +75,9 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    months = ['january', 'february', 'march', 'april', 'may', 'june']
+    months_available = ['january', 'february', 'march', 'april', 'may', 'june']
     # TO DO: display the most common month
-    print('The month with the most trips is: {}\n'.format(months[df['month'].mode()[0] - 1]).title())
+    print('The month with the most trips is: {}\n'.format(months_available[df['month'].mode()[0] - 1]).title())
    
     # TO DO: display the most common day of week
     print('The day of the week with the most trips is: {}\n'.format(df['day_of_week'].mode()[0]))
